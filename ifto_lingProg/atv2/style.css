@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #CA78F2;
+    text-align: center;
+    max-width: 800px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.corpo{
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1fr;
+    max-width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    gap: 20px;
+    text-align: center;
+}
+
+
+div, aside{
+    border: solid 1px rgb(147, 95, 231);
+    padding: 10px;
+}
+
+div > h1, aside > h3{
+    margin-bottom: 20px;
+}
+
+div > div.criarPoupanca{
+    border: none;
+    max-width: 70%;
+    text-align: right;
+    margin: 0 auto;
+}
+
+form > div.centralizado input[type=submit]{
+    height: 30px;
+    width: 120px;
+    text-align: center;
+    margin: 0 auto;
+
+}
+div > form > div.centralizado{
+    border: none;
+    text-align: center;
+}
+
+form.acoes > fieldset{
+    padding: 20px;
+}
+form.acoes input[type=submit]{
+    height: 30px;
+    min-width: 100px;
+    margin: 0 5px;
+}
+.log{
+    background: rgb(233, 232, 232);
+    max-width: 250px;
+    word-wrap: break-word;
+}

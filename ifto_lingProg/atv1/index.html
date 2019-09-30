@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atividade 1 - Calculadora</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Calculadora LTP3 - 4º Período</h1>
+    <form action="calcular.php" method="POST">
+        <label>
+            Primeiro número:
+            <input type="number" name="primNumero">
+        </label>
+        <label>
+            Segundo número:
+            <input type="number" name="segNumero">
+        </label>
+        <br><br>
+        Operação:
+        <br>
+        <input type="radio" name="operacao" value="somar">Somar |
+        <input type="radio" name="operacao" value="subtrair"> Subtrair |
+        <input type="radio" name="operacao" value="multiplicar"> Multiplicar |
+        <input type="radio" name="operacao" value="dividir"> dividir
+        <br><br>
+        <input type="submit" value="Calcular">
+
+    </form>
+
+</body>
+</html>
