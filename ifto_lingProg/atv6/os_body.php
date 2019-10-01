@@ -64,7 +64,7 @@
                 <!-- Cabeçalho da Tabela -->
                 <thead class="thead-light">
                     <tr> <!-- linha do cabeçalho da tabela -->
-                        <th>ID Aluno </th>
+                        <th>ID Aluno</th>
                         <th>Nome do Usuário</th>
                         <th>Email do Usuário</th>
                         <th>Senha do Usuário</th>
