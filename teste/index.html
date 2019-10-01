@@ -1,0 +1,55 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Calculadora</title>
+        <meta charset="UTF-8">
+        <style>
+            .formulario{
+                max-width: 800px;
+                margin: 0 auto;
+                border: 0.1px solid gray;
+            }
+            .formulario > form {
+                text-align: center;
+            }
+            .formulario input[type=radio]{
+                margin: 15px auto;
+            }
+
+            .operacao{
+                margin: 20px auto;
+                text-align: center;
+            }
+            input[type=submit]{
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="formulario">
+            <form action="" method="post">
+                <h1>Calculadora LTP3 - 4º Período</h1>
+                <label>Primeiro Número: 
+                    <input type="number" name="primNumero">
+                </label>
+
+                <label>Segundo Número: 
+                    <input type="number" name="segNumero">
+                </label>
+                <br>
+                <div class="operacao">
+                    <label>Operação:</label>
+                    <br>
+                    <input type="radio" name="operacao" value="somar">Somar |
+                    <input type="radio" name="operacao" value="subtrair"> Subtrair |
+                    <input type="radio" name="operacao" value="multiplicar"> Multiplicar |
+                    <input type="radio" name="operacao" value="dividir"> Dividir
+                </div>
+                <input type="submit" value="Calcular">
+                
+                
+            </form>
+        </div>
+
+    </body>
+</html>
