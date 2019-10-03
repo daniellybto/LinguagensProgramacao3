@@ -55,31 +55,35 @@
             <h2 class="text-center">Atualizar Usuário</h2>
             <br>
 
-            <table class="table table-striped">
-                <!-- Cabeçalho da Tabela -->
-                <thead class="thead-light">
-                    <tr> <!-- linha do cabeçalho da tabela -->
-                        <th>ID Aluno </th>
-                        <th>Nome do Usuário</th>
-                        <th>Email do Usuário</th>
-                        <th>Alterar</th>
-                    </tr>
-                </thead>
+            <form action="os_acoes_formularios.php" method="post">
 
-                <!-- Corpo da Tabela -->
-                <tbody>
-                <?php foreach($totalLinhas as $dados){?>
-                    <tr>
-                        <td><?=$dados['idusuario'];?></td>
-                        <td><?=$dados['usu_nome'];?></td>
-                        <td><?=$dados['usu_email'];?></td>
-                        <td>aqui...</td>
-                    </tr>
-                <?php } ?>
-                 
-                </tbody>
+                <table class="table table-striped">
+                    <!-- Cabeçalho da Tabela -->
+                    <thead class="thead-light">
+                        <tr> <!-- linha do cabeçalho da tabela -->
+                            <th>ID Aluno </th>
+                            <th>Nome do Usuário</th>
+                            <th>Email do Usuário</th>
+                            <th>Alterar</th>
+                        </tr>
+                    </thead>
 
-            </table>
+                    <!-- Corpo da Tabela -->
+                    <tbody>
+                    <?php foreach($totalLinhas as $dados){?>
+                        <tr>
+                            <td><?=$dados['idusuario'];?></td>
+                            <td><?=$dados['usu_nome'];?></td>
+                            <td><?=$dados['usu_email'];?></td>
+                            <td>
+                                <button type="submit" class="btn btn-secondary" name="acao" value="usuario;edit;<?=$dados['idusuario'];?>">Editar</button>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    
+                    </tbody>
+
+                </table>
 
 
 <?php
