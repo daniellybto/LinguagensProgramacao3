@@ -41,7 +41,6 @@
             </form>
 
 <?php
-
         }
 
         // ++++++++++++++++++++++++++
@@ -49,12 +48,8 @@
         // ++++++++++++++++++++++++++
         if($_GET['action'] == 'update'){
             $usuario = new Usuario();
-            
-            $totalLinhas = $usuario->selectGeral();
-
-            if($totalLinhas == ''){#caso não tenha nenhum registro;
-                echo "<p class = 'text-danger'> Nenhum Registro Encontrado</p>";
-            } else{ #caso tenha algum registro:
+            $totalLinhas = $usuario->selectGeral("SELECT * FROM usuario");
+        
 ?>
             <br>
             <h2 class="text-center">Atualizar Usuário</h2>
@@ -67,22 +62,29 @@
                         <th>ID Aluno </th>
                         <th>Nome do Usuário</th>
                         <th>Email do Usuário</th>
-                        <th>Senha do Usuário</th>
                         <th>Alterar</th>
                     </tr>
                 </thead>
 
                 <!-- Corpo da Tabela -->
                 <tbody>
-
+                <?php foreach($totalLinhas as $dados){?>
+                    <tr>
+                        <td><?=$dados['idusuario'];?></td>
+                        <td><?=$dados['usu_nome'];?></td>
+                        <td><?=$dados['usu_email'];?></td>
+                        <td>aqui...</td>
+                    </tr>
+                <?php } ?>
+                 
                 </tbody>
 
             </table>
 
 
 <?php
-            }
         }
+        
 
         // ++++++++++++++++++++++++++
         // BUSCAR usuário

@@ -6,6 +6,9 @@ class Usuario{
 	private $email;
 	private $senha;
 
+	private $linhasSelect;
+	private $arraySelect;
+
 	public function __get($atributo){
 		return $this->$atributo;
 	}
@@ -51,6 +54,13 @@ class Usuario{
 			return false;
 		}
 
+	}
+
+	public function selectGeral($sql){
+		$conect = new Conexao();		
+		$result = mysqli_query($conect->mysqli, $sql);
+
+		return $result;
 	}
 
 }

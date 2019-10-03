@@ -75,14 +75,14 @@
 
         </header>
 
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
         <!-- aqui será o corpo da página, onde será apresentado os conteúdos solicitados pelo HEADER -->
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <?php
-
-                        // unset($_SESSION['resultOperacao']);
-
                         // Caso essa variável de seção já tenha sido criada!
                         if(isset($_SESSION['resultOperacao'])){
                             // $_SESSION['resultOperacao'][0] ==> o resultado da operação  |true = deu tudo certo | false = algo deu errado
@@ -107,18 +107,10 @@
 
                     ?>
 
-
-                    
                 </div>
             </div>
         </div>
 
 
-
-
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-        
     </body>
 </html>
