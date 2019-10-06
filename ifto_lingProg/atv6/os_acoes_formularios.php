@@ -36,6 +36,14 @@ if($explode[0] == "usuario"){
         }
 
     }
+    // ++++++++++++++++++++++++++
+    // ATUALIZAR/EDITAR usuário
+    // ++++++++++++++++++++++++++
+    if($explode[1] == "edit"){#quando for editar eu vou ter outro parâmetro em $explode[2] que é o id do campo que ela clicou!
+        $totalLinhas = $usuario->selectGeral("SELECT * FROM usuario WHERE idusuario = $explode[2]");
+        
+
+    }
 
     
 }
