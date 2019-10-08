@@ -22,12 +22,15 @@
         # que no caso é a nav bar!
         protected function render($view){
             $this->view->page = $view;
+            
+            #ESSE É O MEU LAYOUT PADRÃO... 
             require_once "../App/Views/index.phtml"; 
         }
 
         #o método content é o responsável por pôr o conteúdo dinamicamente no corpo da minha página... , 
         # ou seja, ele é o responsável por renderizar o conteúdo variável da minha página!
         protected function content(){
+
             require_once "../App/Views/" . $this->view->page . ".phtml"; 
         }
 

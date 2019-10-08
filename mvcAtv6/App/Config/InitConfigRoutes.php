@@ -23,13 +23,15 @@
         public function setRoutes(array $rota){
             $this->routes = $rota;
         }
+
+        protected function getUrl(){
+            #retorno qual é o URL, baseado apenas no Path , sem considerar método __GET['']
+            return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        }
         
         #método protected é protegido mais pode ser herdado!
         protected function run($url){
-            // echo "<h2>$url</h2>";
             foreach ($this->getRoutes() as $key => $route){
-                // print_r($route);
-                // echo "<br><br>";
                 if($url == $route['route']){
                     $class = "App\\Controllers\\" . $route['controller'];
 
@@ -40,11 +42,6 @@
                     $controller->$action();
                 }
             }
-        }
-
-        protected function getUrl(){
-            #retorno qual é o URL, baseado apenas no Path , sem considerar método __GET['']
-            return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         }
 
     }

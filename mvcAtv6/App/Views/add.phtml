@@ -1,0 +1,46 @@
+<br>
+<h2 class="text-center">Adicionar <?= $this->titulo ?></h2>
+<br>
+
+<form action="./<?= $this->formAction?>" method="post" class="form-signin col-md-6 mx-auto">
+
+<?php
+    foreach($this->formAddUserNames as $key => $valor){
+?>
+    <div class="form-group row">
+        <label for='<?= $valor?>' class="col-sm-2 col-form-label">
+            <?= $key?>
+        </label>
+
+        <div class="col-sm-10">
+            <input type="<?= $key == 'Senha' ? 'password': 'text'?>" class="form-control"  name='<?= $valor?>' required>
+        </div>
+
+    </div>
+<?php } ?>
+
+<div class="row d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary" name="acao" value="<?= $this->formAction?>">Adicionar</button>
+
+</div>
+
+</form>
+
+<?php
+    // print_r( $this->formAddUserNames);
+    // echo "<br>";
+    // echo count($this->formAddUserNames);
+
+    // echo "<br>";
+
+    // foreach($this->formAddUserNames as $key => $valor){
+    //     echo $key ." - ". $valor;
+    //     echo "<br>";
+    //     echo $key == "Senha"? "password": "text";
+    //     echo "<br>";
+    // }
+
+
+?>
+
+

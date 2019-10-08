@@ -14,7 +14,7 @@
             <br>
             <h2 class="text-center">Adicionar Usuário</h2>
             <br>		
-            <form action="os_acoes_formularios.php" method="post" class="form-signin col-md-4 mx-auto">
+            <form action="os_acoes_formularios.php" method="post" class="form-signin col-md-6 mx-auto">
                 <div class="form-group row">
                     <label for="nome" class="col-sm-2 col-form-label">Nome:</label>
                     <div class="col-sm-10">

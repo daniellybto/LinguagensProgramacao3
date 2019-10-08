@@ -1,0 +1,50 @@
+<br>
+<h2 class="text-center">Atualizar <?= $this->titulo ?></h2>
+<br>
+
+<table class="table table-striped">
+    <!-- Cabeçalho da Tabela -->
+    <thead class="thead-light">
+        <tr> <!-- linha do cabeçalho da tabela -->
+            <?php foreach($this->formAddUserNames as $key => $valor){?>
+                <th><?= $key?></th>
+            <?php } ?>
+                <th>Alterar</th>
+        </tr>
+    </thead>
+
+    <!-- Corpo da Tabela -->
+    <tbody>
+        <?php
+            foreach($this->view->dados as $keyDados => $valorDados){?>
+                <tr>
+                    <td><?=$valorDados['idusuario'];?></td>
+                    <td><?=$valorDados['usu_nome'];?></td>
+                    <td><?=$valorDados['usu_email'];?></td>
+                    <form action="" method="post">
+                        <td>
+                            <input type="hidden" name="id" value="<?=$valorDados['idusuario']?>">
+                            <button type="submit" class="btn btn-secondary" name="acao" value="<?= $this->formAction?>">Editar</button>
+                        </td>
+                    </form>
+                </tr>
+        <?php 
+            }
+        ?>
+
+    </tbody>
+    
+</table>
+
+<!-- <input type="hidden" name="id" value="<?php echo $user['id'] ?>"> -->
+<!-- 
+<td>
+    <button type="submit" class="btn btn-secondary" name="acao" value="usuario;edit;<?=$dados['idusuario'];?>">Editar</button>
+</td> -->
+
+<?php 
+    // print_r($this->formAddUserNames);
+
+    // echo "<br><br>$this->formAddUserNames[0]";
+    // <?= isset($this->resultAction) ? $this->resultAction : null
+?>
