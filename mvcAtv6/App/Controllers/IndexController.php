@@ -79,14 +79,6 @@
             $resultQuery = $usuario->listAll();
             $this->view->dados = $resultQuery;
 
-            // echo "<pre>";
-            
-            // foreach($this->view->dados as $key => $value){
-            //     // print_r($value . "<br>");
-            //     var_dump($value);
-            // }
-            // echo "</pre>";
-
             #Novo atributo criado com a simples função de Customizar o título que aparecerá na View!!!
             $this->titulo = "Dados de Usuário";
             #Novo atributo para personalizar os campos do formulário
@@ -96,7 +88,15 @@
                 'Email do Usuário' => 'usu_email'
             );
 
+            #Novo atributo para customizar o value do action do button submit!
+            #Esse atributo formAction é que irá disparar a ROTA personalizada addUser() !!!!
+            $this->formAction = 'updateUser';
+
             $this->render("update");
+        }
+
+        public function updateUser(){// FUNÇÃO PARA 
+
         }
 
 

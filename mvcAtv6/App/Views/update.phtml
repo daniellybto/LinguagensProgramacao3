@@ -16,14 +16,16 @@
     <!-- Corpo da Tabela -->
     <tbody>
         <?php
+            $dadosPraMostrarNaTabela = array_values($this->formAddUserNames);
             foreach($this->view->dados as $keyDados => $valorDados){?>
                 <tr>
-                    <td><?=$valorDados['idusuario'];?></td>
-                    <td><?=$valorDados['usu_nome'];?></td>
-                    <td><?=$valorDados['usu_email'];?></td>
+                    <?php for($i = 0; $i < count($dadosPraMostrarNaTabela); $i++){ ?>
+                        <td><?=$valorDados["$dadosPraMostrarNaTabela[$i]"]?></td>
+                    <?php } ?>
+
                     <form action="" method="post">
                         <td>
-                            <input type="hidden" name="id" value="<?=$valorDados['idusuario']?>">
+                            <input type="hidden" name="id" value="<?=$valorDados["$dadosPraMostrarNaTabela[0]"]?>">
                             <button type="submit" class="btn btn-secondary" name="acao" value="<?= $this->formAction?>">Editar</button>
                         </td>
                     </form>
@@ -42,9 +44,33 @@
     <button type="submit" class="btn btn-secondary" name="acao" value="usuario;edit;<?=$dados['idusuario'];?>">Editar</button>
 </td> -->
 
+<!-- <?php
+    $dadosPraMostrarNaTabela = array_values($this->formAddUserNames);
+    foreach($this->view->dados as $keyDados => $valorDados){?>
+        <tr>
+            <td><?=$valorDados['idusuario'];?></td>
+            <td><?=$valorDados['usu_nome'];?></td>
+            <td><?=$valorDados['usu_email'];?></td>
+            <form action="" method="post">
+                <td>
+                    <input type="hidden" name="id" value="<?=$valorDados['idusuario']?>">
+                    <button type="submit" class="btn btn-secondary" name="acao" value="<?= $this->formAction?>">Editar</button>
+                </td>
+            </form>
+        </tr>
+<?php 
+    }
+?> -->
+
+
 <?php 
     // print_r($this->formAddUserNames);
 
     // echo "<br><br>$this->formAddUserNames[0]";
     // <?= isset($this->resultAction) ? $this->resultAction : null
+
+    // var_dump(array_values($this->formAddUserNames));
+    // $aux = array_values($this->formAddUserNames);
+
+    // echo "<br> $aux[0]";
 ?>
