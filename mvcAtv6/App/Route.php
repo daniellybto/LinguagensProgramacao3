@@ -7,7 +7,8 @@
         #função que irá dizer quais são as rotas que a aplicação possui!
         protected function initRoutes(){
             #aqui eu pego o nome do diretório (caminh completo do diretório tipo: c://xampp/htdos/ etc....)
-            $diretorio = explode("\\",dirname(__DIR__));
+            // $diretorio = explode("\\",dirname(__DIR__));
+            $diretorio = explode(DIRECTORY_SEPARATOR,dirname(__DIR__));
 
             #Se existir essa ação, ou seja, se houver uma solicitação de algum formulário então eu irei criar uma Rota p/ atender meu form!
             if(isset($_POST['acao'])){
@@ -40,7 +41,12 @@
                 'controller'  => 'IndexController',
                 'action' => 'formUpdateUser'
             );
-
+            
+            $routes ['kledson'] = array(
+                'route' => "/" . end($diretorio) .'/kledson',
+                'controller'  => 'IndexController',
+                'action' => 'kledson'
+            );
 
 
             $this->setRoutes($routes);

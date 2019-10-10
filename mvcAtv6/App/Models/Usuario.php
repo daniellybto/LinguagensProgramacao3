@@ -27,6 +27,10 @@ class Usuario{
         public function listAll(){
             return mysqli_query($this->conexaoDb, "SELECT * FROM usuario");
         }
+        #Lista um dado específico da tabela usuário
+        public function listOne($idusuario){
+            return mysqli_query($this->conexaoDb, "SELECT * FROM usuario WHERE idusuario = $idusuario");
+        }
 
         #Adiciona um Novo usuário no Banco de dados
         public function add(){

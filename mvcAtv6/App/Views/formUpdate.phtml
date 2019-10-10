@@ -1,0 +1,51 @@
+<br>
+<h2 class="text-center">Atualizar <?= $this->titulo ?></h2>
+<br>
+
+
+<form action="./<?= $this->formAction?>" method="post" class="form-signin col-md-6 mx-auto">
+
+<?php
+    $dadosPraMostrarNoForm = array_values($this->formAddUserNames);
+    foreach($this->formAddUserNames as $key => $valor){
+
+        // print_r($valor);
+        print_r($this->view->dados[$valor]);
+        echo "<br>";
+?>
+    <!-- <div class="form-group row">
+        <label for='<?= $valor?>' class="col-sm-2 col-form-label">
+            <?= $key?>
+        </label>
+
+        <div class="col-sm-10">
+            <input type="<?= $key == 'Senha' ? 'password': 'text'?>" class="form-control"  name='<?= $valor?>' required>
+        </div>
+
+    </div> -->
+
+
+<?php } ?>
+
+<div class="row d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary" name="acao" value="<?= $this->formAction?>">Atualizar</button>
+
+</div>
+
+</form>
+
+
+<?php 
+    echo "<hr><pre>";
+
+    print_r($this->view->dados);
+    echo "<pre>";
+
+    // echo "<br><br>$this->formAddUserNames[0]";
+    // <?= isset($this->resultAction) ? $this->resultAction : null
+
+    // var_dump(array_values($this->formAddUserNames));
+    // $aux = array_values($this->formAddUserNames);
+
+    // echo "<br> $aux[0]";
+?>

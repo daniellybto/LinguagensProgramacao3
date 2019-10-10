@@ -95,7 +95,39 @@
             $this->render("update");
         }
 
-        public function updateUser(){// FUNÇÃO PARA 
+        public function updateUser(){// FUNÇÃO que IRÁ PEGAR OS DADOS DO FORMULÁRIO QUE O CLIENTE ESCOLHEU E IRÁ APRESENTAR EM UM OUTRO FORM PARA QUE ELE POSSA EDITAR... 
+            #criando a instância da conexão com o BD com mysqli!
+            $conexao = Conexao::getDb();
+
+            #instanciar o modelo de conexão... 
+            $usuario = new Usuario($conexao);
+
+            #pegar o dado do id do usuário do formulário
+            $iduser = $_POST["id"];
+
+            $resultQuery = $usuario->listOne($iduser);
+
+            // echo "<pre>";
+            // print_r(mysqli_fetch_assoc($resultQuery));
+            // echo "</pre>";
+
+            $this->view->dados = mysqli_fetch_assoc($resultQuery);
+
+            #Novo atributo criado com a simples função de Customizar o título que aparecerá na View!!!
+            $this->titulo = "Dados do Usuário";
+            #Novo atributo para personalizar os campos do formulário
+            $this->formAddUserNames = array(
+                'ID Usuário' => 'idusuario',
+                'Nome do Usuário' => 'usu_nome',
+                'Email do Usuário' => 'usu_email',
+                'Senha' => 'usu_senha'
+            );
+
+            #Novo atributo para customizar o value do action do button submit!
+            #Esse atributo formAction é que irá disparar a ROTA personalizada addUser() !!!!
+            $this->formAction = 'executeUpdate';
+
+            $this->render("formUpdate");
 
         }
 

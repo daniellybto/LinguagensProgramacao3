@@ -23,7 +23,7 @@
                         <td><?=$valorDados["$dadosPraMostrarNaTabela[$i]"]?></td>
                     <?php } ?>
 
-                    <form action="" method="post">
+                    <form action="./<?= $this->formAction?>" method="post">
                         <td>
                             <input type="hidden" name="id" value="<?=$valorDados["$dadosPraMostrarNaTabela[0]"]?>">
                             <button type="submit" class="btn btn-secondary" name="acao" value="<?= $this->formAction?>">Editar</button>

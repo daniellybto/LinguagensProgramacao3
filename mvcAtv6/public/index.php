@@ -1,11 +1,5 @@
 <?php
-    require_once "autoload.php";
-
-    // use App\Controllers;
-    // $teste = new \App\Controllers\tst;
+    require_once ("autoload.php");
 
     $route = new \App\Route;
-
-
-
 ?>

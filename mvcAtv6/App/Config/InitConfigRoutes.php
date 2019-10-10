@@ -31,7 +31,9 @@
         
         #método protected é protegido mais pode ser herdado!
         protected function run($url){
+
             foreach ($this->getRoutes() as $key => $route){
+               
                 if($url == $route['route']){
                     $class = "App\\Controllers\\" . $route['controller'];
 
