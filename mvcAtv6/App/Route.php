@@ -42,11 +42,6 @@
                 'action' => 'formUpdateUser'
             );
             
-            $routes ['kledson'] = array(
-                'route' => "/" . end($diretorio) .'/kledson',
-                'controller'  => 'IndexController',
-                'action' => 'kledson'
-            );
 
 
             $this->setRoutes($routes);

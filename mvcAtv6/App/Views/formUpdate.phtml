@@ -8,21 +8,18 @@
 <?php
     $dadosPraMostrarNoForm = array_values($this->formAddUserNames);
     foreach($this->formAddUserNames as $key => $valor){
-
-        // print_r($valor);
-        print_r($this->view->dados[$valor]);
-        echo "<br>";
 ?>
-    <!-- <div class="form-group row">
-        <label for='<?= $valor?>' class="col-sm-2 col-form-label">
+    <div class="form-group row">
+
+        <label for='<?= $valor?>' class="col-sm-4 col-form-label">
             <?= $key?>
         </label>
 
-        <div class="col-sm-10">
-            <input type="<?= $key == 'Senha' ? 'password': 'text'?>" class="form-control"  name='<?= $valor?>' required>
+        <div class="col-sm-8">
+            <input type="<?= $valor == 'usu_senha' ? 'password': 'text'?>" class="form-control"  name='<?= $valor?>' value="<?=$this->view->dados[$valor]?>" required <?= $valor == 'idusuario' ? 'readonly': null ?>>
         </div>
 
-    </div> -->
+    </div>
 
 
 <?php } ?>
@@ -36,10 +33,12 @@
 
 
 <?php 
-    echo "<hr><pre>";
+    // echo "<hr><pre>";
 
-    print_r($this->view->dados);
-    echo "<pre>";
+    // print_r($this->view->dados);
+    // echo "<pre>";
+
+    // echo md5($this->view->dados['usu_senha']);
 
     // echo "<br><br>$this->formAddUserNames[0]";
     // <?= isset($this->resultAction) ? $this->resultAction : null
