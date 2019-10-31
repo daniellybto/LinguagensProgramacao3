@@ -104,13 +104,11 @@
 
             #pegar o dado do id do usuário do formulário
             $iduser = $_POST["id"];
+            #executa uma consulta baseado no iduser
+            $resultQuery = $usuario->listOne('idusuario',$iduser);
+            // $usuario->listOne('usuario')
 
-            $resultQuery = $usuario->listOne($iduser);
-
-            // echo "<pre>";
-            // print_r(mysqli_fetch_assoc($resultQuery));
-            // echo "</pre>";
-
+            
             $this->view->dados = mysqli_fetch_assoc($resultQuery);
 
             #Novo atributo criado com a simples função de Customizar o título que aparecerá na View!!!
@@ -128,6 +126,10 @@
             $this->formAction = 'executeUpdate';
 
             $this->render("formUpdate");
+
+        }
+
+        public function executeUpdate(){
 
         }
 
